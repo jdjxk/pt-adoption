@@ -4,7 +4,7 @@
 // @version      1.0.0
 // @description  当前做种中增加认领
 // @author       Yunfly
-// @match        https://pthome.net/userdetails.php?id=*
+// @match        https://www.pthome.net/userdetails.php?id=*
 // @match        https://hdsky.me/userdetails.php?id=*
 // @match        https://pt.btschool.club/userdetails.php?id=*
 // @grant        none
@@ -28,7 +28,7 @@
       if (xmlrequest.readyState == 4 && xmlrequest.status == 200) {
         const msg = JSON.parse(xmlrequest.responseText);
 
-        if (location.origin === 'https://pthome.net') {
+        if (location.origin === 'https://www.pthome.net') {
           alert(msg.messsage);
         }
 
@@ -55,8 +55,8 @@
     };
 
     // 设置以POST方式发送请求，并打开连接
-    if (uri === 'https://pthome.net') {
-      uri = `https://pthome.net/claim.php?act=add&tid=${torrentid}`
+    if (uri === 'https://www.pthome.net') {
+      uri = `https://www.pthome.net/claim.php?act=add&tid=${torrentid}`
     } else {
       uri = `${uri}/adoption.php?uid=${uid}&torrentid=${torrentid}&action=add`
     }
